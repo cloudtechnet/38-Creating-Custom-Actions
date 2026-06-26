@@ -1,0 +1,18 @@
+name: Greeting Custom Action
+description: This custom action prints welcome message
+
+inputs:
+  student-name:
+    description: Name of the student
+    required: true
+    default: Student
+
+runs:
+  using: composite
+  steps:
+    - name: Print Welcome Message
+      shell: bash
+      run: |
+        echo "Hello ${{ inputs.student-name }}"
+        echo "Welcome to GitHub Actions Custom Action"
+        echo "This is a reusable custom action"
